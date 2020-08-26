@@ -1,0 +1,36 @@
+.header {
+    padding: 1.2rem 0.4rem;
+    background-color: black;
+}
+
+.header ul{
+    list-style-type: none;
+}
+
+.header ul li{
+    display: inline-block;
+}
+
+.nav-link{
+    text-decoration: none;
+    font-size: 1.5em;
+    margin-left: 4rem;
+    color: white;
+    /* font-weight: bold; */
+}
+
+.nav-link:hover {
+    color: grey;
+}
+
+.enterprise-name {
+    text-decoration: none;
+    font-size: 2em;
+    margin-left: 0;
+    color: white;
+    /* font-weight: bold; */
+}
+
+.enterprise-name:hover {
+    color: grey;
+}
