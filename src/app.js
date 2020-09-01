@@ -12,7 +12,7 @@ class MyApp extends Component {
         }
         this.changeHandler = this.changeHandler.bind(this);
         this.sumbitHandler = this.sumbitHandler.bind(this);
-       
+        this.deleteHandler = this.deleteHandler.bind(this);
     }
     // Input Change Handling.
     changeHandler(event){
@@ -23,7 +23,6 @@ class MyApp extends Component {
    
     // Handling the sumbission of the inputs by the user.
     sumbitHandler(event){
-        event.preventDefault();
         if (!this.state.note) {
             return;
         }
@@ -33,19 +32,33 @@ class MyApp extends Component {
                 note: this.state.note
             }]
         return {
-            noteList: updatedNoteList
+            noteList: updatedNoteList,
+            note: ''
         }
+        })
+        event.preventDefault();
+    }
+
+    //Handling the deletion of the note.
+    deleteHandler(id) {
+        console.log(id);
+        this.setState((prevState) => {
+            const updatedNotes = prevState.noteList.filter(item => item.id != id);
+            console.log(updatedNotes);
+            return {
+                noteList: updatedNotes
+            }
         })
     }
 
     render() {
         const listOfNotes = this.state.noteList.map(item => {
-            return <RenderInputs key={item.id} note={item.note} />
+            return <RenderInputs key={item.id} id={item.id} note={item.note} handleDelete={this.deleteHandler} />
         })
         return (
             <div>
                 {/* <Header/> */}
-                <h2 style={{textAlign:"center", margin:"1rem 0", textDecoration:"underline"}}>Note App</h2>
+                <h2 style={{textAlign:"center", margin:"1rem 0", textDecoration:"underline"}}>NoTeS</h2>
                 <GetInput
                  input={this.state.note}
                  handleChange={this.changeHandler}

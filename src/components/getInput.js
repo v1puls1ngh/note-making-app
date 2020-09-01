@@ -5,13 +5,14 @@ const GetInput = (props) => {
     return(
         <form onSubmit={props.handleSubmit} className="note-form">
             <textarea
-             type='text'
              name='note'
-             value={props.input.note}
+             value={props.input}
              onChange={props.handleChange}
-             />
+            >
+                {/* {props.input.note} */}
+            </textarea>     
             <br/>
-             <button type='submit'>+</button>
+            <button type='submit'>+</button>
         </form>
     )
 }

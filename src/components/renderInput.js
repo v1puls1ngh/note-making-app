@@ -7,6 +7,7 @@ const RenderInputs = (props) => {
             <h3 className="note-item">
                 {props.note}
             </h3>
+            <button onClick={()=> props.handleDelete(props.id)}>Delete</button>
         </div>
     )
 }
