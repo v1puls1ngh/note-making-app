@@ -5,9 +5,12 @@ const RenderInputs = (props) => {
     return(
         <div className="note-container">
             <h3 className="note-item">
-                {props.note}
+                {props.noteItem.note}
             </h3>
-            <button onClick={()=> props.handleDelete(props.id)}>Delete</button>
+            <div className="buttons">
+            <button className="delete-button" onClick={()=> props.handleDelete(props.noteItem.id)}>Delete</button>
+            <button className="edit-button" onClick={() => props.handleEdit(props.noteItem.id)}>Edit</button>
+            </div>
         </div>
     )
 }

@@ -1,14 +1,16 @@
 .note-container{
-    width: 50%;
+    width: 60%;
+    max-width: 750px;
     margin: 0 auto;
     text-align: left;
-    /* background-color: gray; */
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .note-item {
     display: block;
-    margin: 2rem auto;
+    margin: 1rem auto;
     padding: 1rem 1rem;
     width: 80%;
     height: 15%;
@@ -28,17 +30,61 @@
     background: #f1f1f1;
 }
 
-.note-container button{
+.delete-button{
     display: inline;
-    position: absolute;
-    top:30%;
-    right: 0;
+    justify-self: flex-start;
     font-size: 0.8em;
     font-weight: bold;
     border-style: none;
     border-radius: 5px;
     background-color: orangered;
-    padding: 0.5rem 0.2rem;
+    padding: 0.5rem 0.3rem;
     box-sizing: border-box;
     cursor: pointer;
+    margin-left: 0;
+}
+
+.edit-button{
+    display: inline;
+    font-size: 0.8em;
+    font-weight: bold;
+    border-style: none;
+    border-radius: 5px;
+    background-color: orangered;
+    padding: 0.5rem 0.3rem;
+    box-sizing: border-box;
+    cursor: pointer;   
+    margin-left: 0.5rem;
+}
+
+@media (max-width: 1024px){
+    .note-container{
+        flex-direction: column;
+    }
+    .buttons{
+        align-self: start;
+        margin-left: 3rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .note-container{
+        width: 80%;
+        flex-direction: column;
+    }   
+    .buttons{
+        align-self: flex-start;
+        margin-left: 3rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .note-container{
+        width: 80%;
+        flex-direction: column;
+    }   
+    .buttons{
+        align-self: flex-start;
+        margin-left: 1rem;
+    }
 }
